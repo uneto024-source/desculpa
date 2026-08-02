@@ -1,0 +1,123 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ededed;
+}
+
+/* Caixa */
+#message-box {
+    position: absolute;
+    bottom: 25vh;
+    left: -300px;
+    padding: 18px 26px;
+    background: white;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0px black;
+    font-size: 18px;
+    max-width: 80vw;
+    transition: left 2.2s ease-out;
+}
+
+/* ======================== */
+/*  PATO 100% CORRIGIDO     */
+/* ======================== */
+
+#goose {
+    position: absolute;
+    left: -200px;
+    bottom: 12vh;
+
+    /* O pato muda de tamanho, mas o formato interno NÃO quebra */
+    width: 140px;
+    height: 120px;
+    transition: left 2.2s ease-out;
+
+    /* permite posicionamento interno */
+    position: absolute;
+}
+
+/* Corpo */
+.goose-body {
+    width: 90%;
+    height: 70%;
+    background: white;
+    border-radius: 60px;
+    border: 2px solid black;
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+}
+
+/* Olho */
+.goose-eye {
+    width: 14px;
+    height: 14px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+}
+
+.goose-eye::after {
+    content: "";
+    width: 20px;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -6px;
+    left: -4px;
+    transform: rotate(25deg);
+}
+
+/* Bico */
+.goose-beak {
+    width: 22px;
+    height: 14px;
+    background: orange;
+    border-radius: 10px;
+    border: 2px solid black;
+    position: absolute;
+    right: -10px;
+    top: 38px;
+}
+
+/* Pernas */
+.goose-leg {
+    width: 10px;
+    height: 30px;
+    background: orange;
+    border: 2px solid black;
+    position: absolute;
+    bottom: 0;
+}
+
+.goose-leg.left {
+    left: 35%;
+    animation: walk 0.35s infinite alternate;
+}
+
+.goose-leg.right {
+    left: 55%;
+    animation: walk 0.35s infinite alternate-reverse;
+}
+
+@keyframes walk {
+    0% { transform: rotate(-15deg); }
+    100% { transform: rotate(15deg); }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+    #goose {
+        width: 120px;
+        height: 105px;
+        bottom: 16vh;
+    }
+
+    #message-box {
+        font-size: 16px;
+        bottom: 30vh;
+    }
+}
